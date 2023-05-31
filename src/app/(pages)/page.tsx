@@ -22,8 +22,8 @@ export default function Home() {
                 dolorum eum expedita harum hic illum iste nobis nulla optio quia, quidem rerum temporibus velit, voluptates.
             </div>
             <div style={{ position: 'relative' }}>
-                <div ref={rippleRef}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias asperiores eius eveniet explicabo ipsam ipsum iusto laudantium mollitia neque, nihil officia praesentium quae quis repellat sint, temporibus, ullam ut?
+                <div >
+                    <span ref={rippleRef}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto assumenda aut consequatur deserunt eius harum ipsum labore magni minus modi nam necessitatibus nostrum praesentium qui quos rerum, totam voluptatem.</span>
                 </div>
             </div>
         </>
