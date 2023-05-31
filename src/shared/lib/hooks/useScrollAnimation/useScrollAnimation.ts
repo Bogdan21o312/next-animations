@@ -1,6 +1,7 @@
 import {useEffect, useRef} from 'react';
+import {TypeScrollOptions} from "@/shared/lib/hooks/useScrollAnimation/types";
 
-export const useScrollAnimation = (className: string, enableAnimation: boolean = true) => {
+export const useScrollAnimation = ({className = 'fade-in', enableAnimation = true}: TypeScrollOptions) => {
     const elementRef = useRef<HTMLBaseElement>(null);
 
     useEffect(() => {

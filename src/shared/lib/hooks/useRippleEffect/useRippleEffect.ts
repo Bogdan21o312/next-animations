@@ -71,7 +71,7 @@ export const useRippleEffect = ({ color = "white", centered = false }: TypeRippl
                     clearInterval(interval);
                 };
             }
-        }
+        }1
     }, [color, centered]);
 
     return elementRef;
