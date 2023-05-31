@@ -10,7 +10,7 @@ export default function Home() {
         reverse: false,
     });
     const parallaxRef2 = useParallaxMouseEffect({reverse: true,});
-    const rippleRef = useRippleEffect({ });
+    const rippleRef = useRippleEffect({ centered: false });
     return (
         <>
             <div ref={parallaxRef} className="parallax-element">
