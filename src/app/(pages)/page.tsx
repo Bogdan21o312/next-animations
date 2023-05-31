@@ -1,6 +1,6 @@
 "use client"
 
-import {useParallaxMouseEffect, useRippleEffect} from "@/shared";
+import {useParallaxMouseEffect, useRippleEffect, useScrollAnimation} from "@/shared";
 
 export default function Home() {
     const parallaxRef = useParallaxMouseEffect({
@@ -10,7 +10,8 @@ export default function Home() {
         reverse: false,
     });
     const parallaxRef2 = useParallaxMouseEffect({reverse: true,});
-    const rippleRef = useRippleEffect({ centered: false });
+    const rippleRef = useRippleEffect({ centered: true });
+    const elementRef = useScrollAnimation('fade-in', true);
     return (
         <>
             <div ref={parallaxRef} className="parallax-element">
@@ -26,6 +27,76 @@ export default function Home() {
                     <span ref={rippleRef}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto assumenda aut consequatur deserunt eius harum ipsum labore magni minus modi nam necessitatibus nostrum praesentium qui quos rerum, totam voluptatem.</span>
                 </div>
             </div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div ref={elementRef}>Анімований елемент</div>;
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
+            <div><br/></div>
         </>
     )
 }
