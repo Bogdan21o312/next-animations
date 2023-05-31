@@ -1,18 +1,12 @@
 import { useEffect, useRef, RefObject } from 'react';
-
-type ParallaxOptions = {
-    strength?: number;
-    horizontal?: boolean;
-    vertical?: boolean;
-    reverse?: boolean;
-};
+import {TypeParallaxOptions} from "@/shared/lib/hooks/useParallaxMouseEffect/types";
 
 export const useParallaxMouseEffect = ({
                                            strength = 0.01,
                                            horizontal = true,
                                            vertical = true,
                                            reverse = false,
-                                       }: ParallaxOptions): RefObject<HTMLDivElement> => {
+                                       }: TypeParallaxOptions): RefObject<HTMLDivElement> => {
     const elementRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

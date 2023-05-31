@@ -10,7 +10,7 @@ export default function Home() {
         reverse: false,
     });
     const parallaxRef2 = useParallaxMouseEffect({reverse: true,});
-    const rippleRef = useRippleEffect({ color: 'green' });
+    const rippleRef = useRippleEffect({ });
     return (
         <>
             <div ref={parallaxRef} className="parallax-element">
@@ -22,9 +22,9 @@ export default function Home() {
                 dolorum eum expedita harum hic illum iste nobis nulla optio quia, quidem rerum temporibus velit, voluptates.
             </div>
             <div style={{ position: 'relative' }}>
-                <button ref={rippleRef} style={{ background: 'red', color: 'white', border: 'none' }}>
-                    Click Me
-                </button>
+                <div ref={rippleRef}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias asperiores eius eveniet explicabo ipsam ipsum iusto laudantium mollitia neque, nihil officia praesentium quae quis repellat sint, temporibus, ullam ut?
+                </div>
             </div>
         </>
     )

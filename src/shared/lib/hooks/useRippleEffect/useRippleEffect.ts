@@ -1,18 +1,15 @@
 import { useEffect, useRef, RefObject } from 'react';
+import {TypeRippleOptions} from "@/shared/lib/hooks/useRippleEffect/types";
 
-type RippleOptions = {
-    color: string;
-};
-
-export const useRippleEffect = ({ color }: RippleOptions): RefObject<HTMLButtonElement> => {
-    const buttonRef = useRef<HTMLButtonElement>(null);
+export const useRippleEffect = ({ color = "white" }: TypeRippleOptions): RefObject<HTMLElement> => {
+    const elementRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        const button = buttonRef.current;
+        const element = elementRef.current;
 
-        if (button) {
+        if (element) {
             const handleMouseDown = (event: MouseEvent) => {
-                const buttonRect = button.getBoundingClientRect();
+                const elementRect = element.getBoundingClientRect();
                 const ripple = document.createElement('span');
                 ripple.style.position = 'absolute';
                 ripple.style.backgroundColor = color;
@@ -21,9 +18,9 @@ export const useRippleEffect = ({ color }: RippleOptions): RefObject<HTMLButtonE
                 ripple.style.pointerEvents = 'none';
 
                 const { clientX, clientY } = event;
-                const offsetX = clientX - buttonRect.left;
-                const offsetY = clientY - buttonRect.top;
-                const size = Math.max(button.offsetWidth, button.offsetHeight);
+                const offsetX = clientX - elementRect.left;
+                const offsetY = clientY - elementRect.top;
+                const size = Math.max(element.offsetWidth, element.offsetHeight);
                 const halfSize = size / 2;
 
                 ripple.style.width = `${size}px`;
@@ -31,7 +28,7 @@ export const useRippleEffect = ({ color }: RippleOptions): RefObject<HTMLButtonE
                 ripple.style.left = `${offsetX - halfSize}px`;
                 ripple.style.top = `${offsetY - halfSize}px`;
 
-                button.appendChild(ripple);
+                element.appendChild(ripple);
 
                 ripple.animate(
                     [
@@ -45,17 +42,17 @@ export const useRippleEffect = ({ color }: RippleOptions): RefObject<HTMLButtonE
                 );
 
                 setTimeout(() => {
-                    button.removeChild(ripple);
+                    element.removeChild(ripple);
                 }, 800);
             };
 
-            button.addEventListener('mousedown', handleMouseDown);
+            element.addEventListener('mousedown', handleMouseDown);
 
             return () => {
-                button.removeEventListener('mousedown', handleMouseDown);
+                element.removeEventListener('mousedown', handleMouseDown);
             };
         }
     }, [color]);
 
-    return buttonRef;
+    return elementRef;
 };
